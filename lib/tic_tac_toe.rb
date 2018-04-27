@@ -84,3 +84,14 @@ def winner(board)
     board[winning_combo.first]
   end
 end
+
+def play(board)
+  until over?(board)
+    turn(board)
+  end
+  if won?(board)
+    puts "Conventions #{winning_combo.first}!"
+  elsif draw?(board)
+    puts "The game ends in a draw."
+  end
+end
